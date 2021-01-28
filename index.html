@@ -1,0 +1,498 @@
+ <!DOCTYPE html>
+<html> 
+  <meta http-equiv="Access-Control-Allow-Origin" content="*">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+      
+ <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+<script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"/>
+ 
+     
+<script src="https://www.jqueryscript.net/demo/static-load-more/jquery.simpleLoadMore.js?v3"></script>
+    <link
+      href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css"
+      rel="stylesheet"
+    />
+ 
+    <script src="https://unpkg.com/gridjs/dist/gridjs.development.js"></script>
+    
+      <script type="module">
+    import { toastController } from 'https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/index.esm.js';
+    window.toastController = toastController;
+  </script> 
+ 
+<body >
+<ion-app>
+ <ion-header translucent>
+ <ion-toolbar color="primary"> 
+        <ion-buttons slot="start" id="awal"  style="display: none;" onclick="beranda2()"> 
+            <ion-icon name="arrow-back-sharp" style="font-size :32px"></ion-icon>
+        </ion-buttons>
+     
+        <ion-buttons slot="start" id="tausiyah"  style="display: none;" onclick="tausiyah()"> 
+            <ion-icon name="arrow-back-sharp" style="font-size :32px"></ion-icon>
+        </ion-buttons>
+     
+             <ion-buttons slot="start" id="tokomta1"  style="display: none;" onclick="tokomta()"> 
+            <ion-icon name="arrow-back-sharp" style="font-size :32px"></ion-icon>
+        </ion-buttons>  
+     
+     
+        <ion-title>MTA ONE</ion-title>
+ </ion-toolbar> 
+<ion-progress-bar id="gif0" color="success"  style="display: none;" type="indeterminate"></ion-progress-bar>
+ </ion-header>     
+
+  <ion-content >  
+      <div id="main">
+      
+<ion-button shape="round"  expand="full" fill="outline"  id="atasya" >Beranda</ion-button>
+      
+      <div id="selamat"> 
+<ion-progress-bar id="gif1"   style="display: none;" type="indeterminate"></ion-progress-bar>
+      </div>
+      <div id="tanggal"> 
+<ion-progress-bar id="gif2"   style="display: none;" type="indeterminate"></ion-progress-bar>
+      </div>
+      <div id="covid"> 
+<ion-progress-bar id="gif3"   style="display: none;" type="indeterminate"></ion-progress-bar>
+      </div>
+      <div id="pmi"> 
+<ion-progress-bar id="gif4"   style="display: none;" type="indeterminate"></ion-progress-bar>
+      </div>
+      <div id="salingsapa"> 
+<ion-progress-bar id="gif5"   style="display: none;" type="indeterminate"></ion-progress-bar>
+      </div>
+      <div id="menu"> 
+<ion-progress-bar id="gif6"   style="display: none;" type="indeterminate"></ion-progress-bar>
+      </div>
+      
+   
+      </div>
+       
+      
+    </ion-content>
+    
+    <ion-segment  id="barmenu" slot="bottom"  color="primary" value="home">
+        <ion-segment-button value="beranda2" layout="icon-bottom" onclick="beranda2()">
+          <ion-label>Beranda</ion-label>
+          <ion-icon name="home"></ion-icon>
+        </ion-segment-button>
+        <ion-segment-button value="mtatv" layout="icon-bottom" onclick="location.href='go:mtatv';">
+          <ion-label>MTATV</ion-label>
+          <ion-icon name="logo-youtube"></ion-icon>
+        </ion-segment-button>
+        <ion-segment-button value="persadafm" layout="icon-bottom" onclick="location.href='go:radio';">
+          <ion-label>PersadaFM</ion-label>
+          <ion-icon name="radio"></ion-icon>
+        </ion-segment-button>
+        <ion-segment-button value="brosur" layout="icon-bottom" onclick="brosur()">
+          <ion-label>Brosur</ion-label>
+          <ion-icon name="bookmarks"></ion-icon>
+        </ion-segment-button>
+      </ion-segment>
+     
+</ion-app>
+     
+    <style>
+      #main {
+  scroll-behavior: smooth;
+}
+
+  ion-content {
+
+    font-size:16px;
+
+  }
+
+    :root {
+
+      --ion-safe-area-top: 20px;
+
+      --ion-safe-area-bottom: 22px;
+
+    } 
+
+    
+
+.example1 {
+
+ height: 20px;  
+
+ overflow: hidden;
+
+ position: relative;
+
+}
+
+.example1 h3 {
+
+ font-size: 1em;
+ 
+
+ position: absolute;
+
+ width: 100%;
+
+ height: 100%;
+
+ margin: 0; 
+
+ text-align: center;
+
+ /* Starting position */
+
+ -moz-transform:translateX(100%);
+
+ -webkit-transform:translateX(100%);    
+
+ transform:translateX(100%);
+
+ /* Apply animation to this element */  
+
+ -moz-animation: example1 15s linear infinite;
+
+ -webkit-animation: example1 15s linear infinite;
+
+ animation: example1 15s linear infinite;
+
+}
+
+/* Move it (define the animation) */
+
+@-moz-keyframes example1 {
+
+ 0%   { -moz-transform: translateX(100%); }
+
+ 100% { -moz-transform: translateX(-100%); }
+
+}
+
+@-webkit-keyframes example1 {
+
+ 0%   { -webkit-transform: translateX(100%); }
+
+ 100% { -webkit-transform: translateX(-100%); }
+
+}
+
+@keyframes example1 {
+
+ 0%   { 
+
+ -moz-transform: translateX(100%); /* Firefox bug fix */
+
+ -webkit-transform: translateX(100%); /* Firefox bug fix */
+
+ transform: translateX(100%);       
+
+ }
+
+ 100% { 
+
+ -moz-transform: translateX(-100%); /* Firefox bug fix */
+
+ -webkit-transform: translateX(-100%); /* Firefox bug fix */
+
+ transform: translateX(-100%); 
+
+ }
+
+}
+
+ .example2a {
+ font-size: 1em;
+  display: inline-block;
+  white-space: nowrap;
+  animation: floatText 25s infinite linear;
+  padding-left: 100%; /*Initial offset*/
+}
+.example2a:hover {
+  animation-play-state: paused;
+}
+@keyframes floatText {
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.example2 {
+ font-size: 1em;
+  display: inline-block;
+  white-space: nowrap;
+  animation: floatText 62s infinite linear;
+  padding-left: 100%; /*Initial offset*/
+}
+.example2:hover {
+  animation-play-state: paused;
+}
+@keyframes floatText {
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+
+.ios {
+
+--ion-background-color: #000000;
+
+  --ion-background-color-rgb: 0, 0, 0;
+
+
+
+  --ion-text-color: #ffffff;
+
+  --ion-text-color-rgb: 255, 255, 255;
+
+
+
+  --ion-color-step-50: #0d0d0d;
+
+  --ion-color-step-100: #1a1a1a;
+
+  --ion-color-step-150: #262626;
+
+  --ion-color-step-200: #333333;
+
+  --ion-color-step-250: #404040;
+
+  --ion-color-step-300: #4d4d4d;
+
+  --ion-color-step-350: #595959;
+
+  --ion-color-step-400: #666666;
+
+  --ion-color-step-450: #737373;
+
+  --ion-color-step-500: #808080;
+
+  --ion-color-step-550: #8c8c8c;
+
+  --ion-color-step-600: #999999;
+
+  --ion-color-step-650: #a6a6a6;
+
+  --ion-color-step-700: #b3b3b3;
+
+  --ion-color-step-750: #bfbfbf;
+
+  --ion-color-step-800: #cccccc;
+
+  --ion-color-step-850: #d9d9d9;
+
+  --ion-color-step-900: #e6e6e6;
+
+  --ion-color-step-950: #f2f2f2;
+
+
+
+  --ion-toolbar-background: #0d0d0d;
+
+
+
+  --ion-item-background: #1c1c1c;
+
+  --ion-item-background-activated: #313131;
+
+}
+
+ 
+a { 
+  background-color: white; 
+      width: 100%;
+    padding: 25px 45px;
+    box-sizing: border-box;
+  text-decoration: none;
+  display: inline-block;
+  color: black;
+}
+  
+a:focus   {
+  background: LawnGreen;
+  color: black
+}
+
+   
+.slider {
+  width: 100%;
+  height: 190px;
+  display: flex;
+  overflow-x: auto;
+}
+.slide {
+  width: 78%;
+  flex-shrink: 0;
+  height: 100%;
+}
+.slider2 {
+  width: 100%;
+  height: 202px;
+  display: flex;
+  overflow-x: auto;
+}
+.slide2 {
+  width: 50%;
+  flex-shrink: 0;
+  height: 100%;
+}
+.btn-default {
+  background-color: #000;
+  color: #ffe100;
+}
+.btn-primary {
+  background-color:
+    #ffe100;
+  color: #000;
+}
+
+@keyframes glowing {
+  0% { box-shadow: 0 0 -10px red; }
+  40% { box-shadow: 0 0 20px red; }
+  60% { box-shadow: 0 0 20px red; }
+  100% { box-shadow: 0 0 -10px red; }
+}
+
+.button-glow {
+  animation: glowing 2000ms infinite;
+}
+
+	    ion-col > div {
+      background-color: #f7f7f7;
+      border: solid 1px #ddd;
+      padding: 10px;
+    }
+ 
+    </style>
+    
+    <script> 
+ window.onload = beranda;
+
+        
+ function beranda(){   
+     
+$(document).ready(function(){
+    	 $('#gif1').show();  
+    	 $('#gif2').show();  
+    	 $('#gif3').show();  
+    	 $('#gif4').show();  
+    	 $('#gif5').show();  
+    	 $('#gif6').show();  
+$.ajax({ url:  "http://mta.flagodna.com/beranda/v2/selamat.php",
+        context: document.body,
+        success:function(response){
+                	$('#gif1').hide(); 
+                    $("#selamat").html(response);
+                }
+
+      });
+    $.ajax({ url:  "http://mta.flagodna.com/beranda/v2/tanggal.php",
+        context: document.body,
+        success:function(response){
+                	$('#gif2').hide(); 
+                    $("#tanggal").html(response);
+                }
+
+      });
+    $.ajax({ url:  "http://mta.flagodna.com/beranda/v2/covid.php",
+        context: document.body,
+        success:function(response){
+                	$('#gif3').hide(); 
+                    $("#covid").html(response);
+                }
+
+      });
+    $.ajax({ url:  "http://mta.flagodna.com/beranda/v2/pmi.php",
+        context: document.body,
+        success:function(response){
+                	$('#gif4').hide(); 
+                    $("#pmi").html(response);
+                }
+
+      });
+    $.ajax({ url:  "http://mta.flagodna.com/beranda/v2/salingsapa.php",
+        context: document.body,
+        success:function(response){
+                	$('#gif5').hide(); 
+                    $("#salingsapa").html(response);
+                }
+
+      });
+    $.ajax({ url:  "http://mta.flagodna.com/beranda/v2/menu.php",
+        context: document.body,
+        success:function(response){
+                	$('#gif6').hide(); 
+                    $("#menu").html(response);
+                }
+
+      });
+}); 
+}
+function brosur(){   
+    $(document).ready(function(){
+    	 $('#gif0').show();  
+    $.ajax({ url:  "http://mta.flagodna.com/beranda/v2/brosur.php",
+        context: document.body,
+        success:function(response){
+                	$('#gif0').hide(); 
+                    $("#main").html(response);
+                }
+
+      });
+}); 
+  }
+function beranda2(){ 
+$(document).ready(function(){
+    	 $('#gif0').show(); 
+       $('#awal').hide();  
+       $('#barmenu').show();  
+    $.ajax({ url:  "http://mta.flagodna.com/beranda/v2/beranda.php",
+        context: document.body,
+        success:function(response){
+                	$('#gif0').hide(); 
+                    $("#main").html(response);
+                }
+
+      });
+});  
+  }
+
+function tausiyah(){ 
+$(document).ready(function(){
+    	 $('#gif0').show(); 
+       $('#awal').show();  
+       $('#tausiyah').hide();   
+    $.ajax({ url:  "http://mta.flagodna.com/beranda/v2/tausiyahislam.php",
+        context: document.body,
+        success:function(response){
+                	$('#gif0').hide(); 
+                    $("#main").html(response);
+                }
+
+      });
+});  
+  }
+
+function tokomta(){ 
+$(document).ready(function(){
+    	 $('#gif0').show();   
+       $('#tokomta1').hide();   
+       $('#awal').show();
+    $.ajax({ url:  "http://mta.flagodna.com/tokomta/index2.php",
+        context: document.body,
+        success:function(response){
+                	$('#gif0').hide(); 
+                    $("#main").html(response);
+                }
+
+      });
+});  
+  }
+ 
+        
+  </script>
+    
+</body>
+</html> 
