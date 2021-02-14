@@ -1,6 +1,6 @@
 <template>
-  <f7-page name="post">
-    <f7-navbar bg-color="green" title="Persada FM" back-link="Back"></f7-navbar> 
+  <f7-page id="wow" name="post"  color-theme="deeporange" >
+    <f7-navbar class="navbar2" title="Persada FM" back-link="Back"></f7-navbar> 
  
 <div class="background">
   <span></span>

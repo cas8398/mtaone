@@ -1,6 +1,6 @@
 <template> 
-  <f7-page name="post">
-    <f7-navbar bg-color="green" :title="post ? post.title : ''" back-link="Back"></f7-navbar>   
+  <f7-page  name="post"  color-theme="deeporange" >
+    <f7-navbar class="navbar2" :title="post ? post.title : ''" back-link="Back"></f7-navbar>   
 <iframe :src="post.isi" 
         frameborder="0" allow="autoplay; encrypted-media" class="iframe" sandbox="allow-forms allow-scripts allow-pointer-lock allow-same-origin allow-top-navigation"
         id="Overlayvideo" allowfullscreen>

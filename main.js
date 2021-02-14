@@ -14,6 +14,9 @@ import Api from './api.js';
  
 window.api = new Api();  
  
+import MarqueeText from 'vue-marquee-text-component';
+
+Vue.component('marquee-text', MarqueeText);
 
 import 'framework7/css/framework7.bundle.min.css';
 import './assets/sass/app.scss';
@@ -21,6 +24,8 @@ import './assets/sass/app.scss';
 import routes from './routes';
 import app from './screens/app.vue';
 
+import JwPagination from 'jw-vue-pagination';
+Vue.component('jw-pagination', JwPagination);
 export default new Vue({
   store,
   data() {

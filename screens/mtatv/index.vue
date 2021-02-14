@@ -1,6 +1,6 @@
 <template>
-  <f7-page name="post">
-    <f7-navbar bg-color="green" title="MTA TV" back-link="Back"></f7-navbar> 
+  <f7-page  name="post"  color-theme="deeporange" >
+    <f7-navbar class="navbar2" title="MTA TV" back-link="Back"></f7-navbar> 
       
  
 <iframe src="https://www.youtube.com/embed/live_stream?channel=UCIrj7gqiu8uUfgMitYFzkNg" 

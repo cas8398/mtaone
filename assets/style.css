@@ -1,7 +1,10 @@
 #container { 
       margin: auto;
   width: 100%; 
-    max-width: 700px;} 
+    max-width: 700px;  
+    
+} 
+
 iframe {
 position: absolute;
 top: 0;
@@ -12,12 +15,23 @@ height: 100%;
 .content {
 min-height: 600px;
 }
- .swiper-slide {
-    background-color: #eff1f3;
-    text-align: left; 
-    font-size: 18px; 
+.contentz {
+    padding:5px !important;
+}
+#siper1 { 
+    text-align: left;  
     width:100% ;
-    height:200px !important;
+    height:170px !important;
+  }
+#siper3 { 
+    text-align: left;  
+    width:100% ;
+    height:230px !important;
+  }
+ #siper2 { 
+    text-align: left;  
+    width:100% ;
+    height:130px !important;
   }
 .swiper-slide p {
   padding-left: 2em;
@@ -33,4 +47,34 @@ min-height: 600px;
     padding: 5px;
     margin-bottom: 16px;
     font-size: 12px;
-  }
+  } 
+.navbar2 { 
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2) !important;  
+  background-color: rgba(255, 255, 255, .15) !important;
+  
+  backdrop-filter: blur(6px) !important;
+} 
+#wow {
+  background: url('beranda.jpeg')
+    no-repeat center center;
+  background-size: cover;
+  display: grid;
+  font-family: 'Inconsolata', monospace;
+  min-height: 100vh;
+  place-items: center;
+}
+.rtl {
+  direction: rtl;
+    font-size: 35px;
+    font-family:fantasy
+}
+#expand {
+    margin-left:  0px !important;
+    margin-right: 29px !important;
+}
+.page-number {
+    display: none !important;
+} 
+.centeris {
+text-align: center !important;
+}

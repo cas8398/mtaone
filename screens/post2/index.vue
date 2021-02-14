@@ -1,8 +1,8 @@
 <template>
-  <f7-page name="post">
-    <f7-navbar bg-color="green" :title="post ? post.title : ''" back-link="Back"></f7-navbar>
+  <f7-page id="wow" name="post"  color-theme="deeporange" >
+    <f7-navbar  class="navbar2" :title="post ? post.title : ''" back-link="Back"></f7-navbar>
     <f7-card class="demo-card-header-pic" outline v-if="post">
-    <img :data-src="post.img" class="lazy lazy-fade-in" :style=" 'height: 100%; max-height: 200px; width: 100%; max-width: 300px; display: block;margin: 0 auto'">
+    
       <f7-card-content class="page-content hide-navbar-on-scroll">
         <p class="date">Dibuat {{ post.date |  moment('from') }}</p>
         <h1>{{ post.title }}</h1>

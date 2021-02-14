@@ -1,42 +1,39 @@
 <template>
-  <f7-page name="post">
-    <f7-navbar bg-color="green" title="Saling Sapa" back-link="Back"></f7-navbar> 
+  <f7-page id="wow" name="post"  color-theme="deeporange" >
+    <f7-navbar  class="navbar2" title="Saling Sapa" back-link="Back"></f7-navbar> 
           
     
-  <div id="atas">
-      <f7-block-title>{{currentDateTime()}}</f7-block-title>
-  </div>
-      
-   
-      <hr/> 
+  <f7-card id="atas"> {{currentDateTime()}} 
+  </f7-card>
+       
   <transition-group class="page-content hide-navbar-on-scroll"
   name="bounceUp"  
 >  <div class="timeline medium-sides" v-for="item in salingsapa" :key="item.unix">
       <div class="timeline-item"  >
-    <div class="timeline-item-date">{{item.unix |  moment('from')}}</div>
+    <div class="timeline-item-date"><b>{{item.unix |  moment('from')}} </b> </div>
     <div class="timeline-item-divider"></div>
     <div class="timeline-item-content">
-      <div class="timeline-item-inner"> {{item.pesan}}</div>
+      <div class="timeline-item-inner"> {{item.pesan}}<br><br>
+        <span>{{item.ip}}</span></div>
     </div>
   </div>
     </div> 
       
 </transition-group>
       
-   <f7-toolbar tabbar :position="'bottom'">
-   <f7-link> 
-       <f7-list-input   
+   <f7-toolbar tabbar :position="'bottom'" class="navbar2">
+   <f7-link > 
+       <f7-list-input   text-color="white"
           v-on:click="moveTo()"
           class="inputCat"
           :value="inputCat"
           @input="inputCat = $event.target.value"
           type="text"
-          placeholder=" ..Tulis disini" 
-    floating-label 
+          label=" ..Tulis disini"  
     clear-button required validate
         ></f7-list-input></f7-link>
     <f7-link > 
-        <f7-button  fill color="green" v-on:click="cek()">Kirim</f7-button> </f7-link>
+        <f7-button  fill   v-on:click="cek()">Kirim</f7-button> </f7-link>
      
     </f7-toolbar> 
   </f7-page>

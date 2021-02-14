@@ -1,10 +1,14 @@
 <template>
-  <f7-page name="post">
-    <f7-navbar bg-color="green" :title="post ? post.title : ''" back-link="Back"></f7-navbar> 
-     <img :data-src="post.img" class="lazy lazy-fade-in" :style=" 'height: 100%; max-height: 200px; width: 100%; max-width: 300px; display: block;margin: 0 auto'">
+  <f7-page id="wow" name="post"  color-theme="deeporange" >
+    <f7-navbar   class="navbar2" :title="post ? post.title : ''" back-link="Back"></f7-navbar>  
+    <f7-card
+    title="Brosur"
+    :content="post.title"
+   
+  ></f7-card>
       <f7-card
     title="Download"
-    content=" Silahkan download Brosur dengan mengeklik tombol kanan dibawah."
+    content=" Silahkan download Brosur dengan menge-klik tombol kanan dibawah."
    
   ></f7-card>
       <br><br><br>
@@ -13,7 +17,7 @@
 <f7-icon icon="icon-back" ></f7-icon>
     </f7-fab>
     <f7-fab position="right-bottom" @click="inapp(post)" >
- ⬇️
+  <i class="f7-icons size-50">cloud_download</i>
     </f7-fab>
   </f7-page>
 </template>
